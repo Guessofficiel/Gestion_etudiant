@@ -1,0 +1,21 @@
+<h2>Liste des étudiants</h2>
+<div *ngIf="loading">Chargement…</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="!loading && etudiants.length">
+  <thead><tr><th>Nom</th><th>Prénom</th><th>Email</th><th>Actions</th></tr></thead>
+  <tbody>
+    <tr *ngFor="let e of etudiants">
+      <td>{{ e.nom }}</td>
+      <td>{{ e.prenom }}</td>
+      <td>{{ e.email }}</td>
+      <td>
+        <button (click)="view(e.id)">Voir</button>
+        <button (click)="edit(e.id)">Modifier</button>
+        <button (click)="delete(e.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && etudiants.length === 0">Aucun étudiant.</div>

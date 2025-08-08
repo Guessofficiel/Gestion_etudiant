@@ -1,0 +1,25 @@
+<h2>{{ id ? 'Modifier' : 'Ajouter' }} un étudiant</h2>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Nom</label>
+  <input formControlName="nom" />
+  <div *ngIf="form.get('nom')?.invalid && form.get('nom')?.touched">Nom requis (min 2).</div>
+
+  <label>Prénom</label>
+  <input formControlName="prenom" />
+  <div *ngIf="form.get('prenom')?.invalid && form.get('prenom')?.touched">Prénom requis.</div>
+
+  <label>Email</label>
+  <input formControlName="email" />
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email invalide.</div>
+
+  <label>Filière</label>
+  <input formControlName="filiere" />
+
+  <label>Date de naissance</label>
+  <input type="date" formControlName="dateNaissance" />
+
+  <label>Téléphone</label>
+  <input formControlName="telephone" />
+
+  <button type="submit" [disabled]="submitting">{{ id ? 'Mettre à jour' : 'Créer' }}</button>
+</form>

@@ -1,0 +1,10 @@
+<div *ngIf="loading">Chargement…</div>
+<div *ngIf="etudiant">
+  <h2>{{ etudiant.nom }} {{ etudiant.prenom }}</h2>
+  <p>Email: {{ etudiant.email }}</p>
+  <p>Filière: {{ etudiant.filiere || '—' }}</p>
+  <p>Date naissance: {{ etudiant.dateNaissance || '—' }}</p>
+  <p>Téléphone: {{ etudiant.telephone || '—' }}</p>
+  <button (click)="edit()">Modifier</button>
+  <button (click)="delete()">Supprimer</button>
+</div>
