@@ -1,5 +1,17 @@
-<nav>
-  <a routerLink="/etudiants">Étudiants</a> |
-  <a routerLink="/etudiants/new">Ajouter</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container">
+    <span class="navbar-brand">Gestion des Étudiants</span>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/etudiants" routerLinkActive="active">Liste des Étudiants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/etudiants/new" routerLinkActive="active">
+            <i class="bi bi-plus-circle"></i> Ajouter un Étudiant
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<hr>

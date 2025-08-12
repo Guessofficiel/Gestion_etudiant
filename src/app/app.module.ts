@@ -6,17 +6,5 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+// This file is no longer needed when using standalone components and bootstrapApplication.
+// You can safely delete this file if you have migrated all bootstrapping logic to main.ts.

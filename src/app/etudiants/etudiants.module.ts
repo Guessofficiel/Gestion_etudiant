@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { EtudiantListComponent } from './etudiant-list/etudiant-list.component';
 import { EtudiantFormComponent } from './etudiant-form/etudiant-form.component';
 import { EtudiantDetailComponent } from './etudiant-detail/etudiant-detail.component';
 
 @NgModule({
-  declarations: [
-    EtudiantListComponent,
-    EtudiantFormComponent
-    // ❌ Ne pas mettre EtudiantDetailComponent ici car standalone
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    EtudiantDetailComponent, // ✅ Importer le standalone component
+    HttpClientModule,
+    EtudiantFormComponent,
+    EtudiantDetailComponent,
+    EtudiantListComponent,
     RouterModule.forChild([
       { path: '', component: EtudiantListComponent },
       { path: 'new', component: EtudiantFormComponent },

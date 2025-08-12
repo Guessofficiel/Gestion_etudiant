@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { Etudiant } from '../models/etudiant.model';
 import { EtudiantService } from '../services/etudiant.service';
 
 @Component({
   selector: 'app-etudiant-list',
-  templateUrl: './etudiant-list.component.html'
+  templateUrl: './etudiant-list.component.html',
+  standalone: true,
+  imports: [CommonModule, RouterModule]
 })
 export class EtudiantListComponent implements OnInit {
   etudiants: Etudiant[] = [];

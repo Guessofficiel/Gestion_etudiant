@@ -1,0 +1,13 @@
+{
+  "etudiants": [
+    {
+      "id": "b17d",
+      "nom": "BALDE",
+      "prenom": "Thierno",
+      "email": "officielguess@gmail.com",
+      "filiere": "Génie informatique",
+      "dateNaissance": "2025-08-12",
+      "telephone": "71677985"
+    }
+  ]
+}

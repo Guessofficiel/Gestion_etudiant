@@ -1,10 +1,53 @@
-<div *ngIf="loading">Chargement…</div>
-<div *ngIf="etudiant">
-  <h2>{{ etudiant.nom }} {{ etudiant.prenom }}</h2>
-  <p>Email: {{ etudiant.email }}</p>
-  <p>Filière: {{ etudiant.filiere || '—' }}</p>
-  <p>Date naissance: {{ etudiant.dateNaissance || '—' }}</p>
-  <p>Téléphone: {{ etudiant.telephone || '—' }}</p>
-  <button (click)="edit()">Modifier</button>
-  <button (click)="delete()">Supprimer</button>
+<div class="container mt-4">
+  <div *ngIf="loading" class="alert alert-info">
+    <i class="bi bi-hourglass-split me-2"></i>Chargement...
+  </div>
+  
+  <div *ngIf="etudiant" class="card">
+    <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+      <h2 class="mb-0">
+        <i class="bi bi-person-vcard me-2"></i>
+        {{ etudiant?.nom }} {{ etudiant?.prenom }}
+      </h2>
+    </div>
+    
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-envelope me-2"></i>
+              <strong>Email:</strong> {{ etudiant?.email }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-book me-2"></i>
+              <strong>Filière:</strong> {{ etudiant?.filiere || '—' }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-calendar-date me-2"></i>
+              <strong>Date de naissance:</strong> {{ etudiant?.dateNaissance || '—' }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-telephone me-2"></i>
+              <strong>Téléphone:</strong> {{ etudiant?.telephone || '—' }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card-footer d-flex justify-content-between">
+      <a routerLink="/etudiants" class="btn btn-secondary">
+        <i class="bi bi-arrow-left me-1"></i>Retour
+      </a>
+      <div>
+        <button (click)="edit()" class="btn btn-warning me-2">
+          <i class="bi bi-pencil me-1"></i>Modifier
+        </button>
+        <button (click)="delete()" class="btn btn-danger">
+          <i class="bi bi-trash me-1"></i>Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, Validators, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { EtudiantService } from '../services/etudiant.service';
 import { Etudiant } from '../models/etudiant.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-etudiant-form',
-  templateUrl: './etudiant-form.component.html'
+  templateUrl: './etudiant-form.component.html',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, RouterModule]
 })
 export class EtudiantFormComponent implements OnInit {
   form: FormGroup;

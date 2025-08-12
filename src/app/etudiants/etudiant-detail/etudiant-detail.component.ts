@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Etudiant } from '../models/etudiant.model';
 import { EtudiantService } from '../services/etudiant.service';
 
 @Component({
   selector: 'app-etudiant-detail',
-  templateUrl: './etudiant-detail.component.html'
+  templateUrl: './etudiant-detail.component.html',
+  standalone: true,
+  imports: [CommonModule, RouterModule]
 })
 export class EtudiantDetailComponent implements OnInit {
   etudiant?: Etudiant;
